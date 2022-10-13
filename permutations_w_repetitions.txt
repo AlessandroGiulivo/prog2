@@ -1,0 +1,37 @@
+PERMUTATIONS(S)
+    let S be an empty stack (of characters)
+    for i = 1 to |S| do
+        push s[i] onto S
+    let L be an empty set (of strings)
+    insert an empty string in L
+    while S is not empty do
+        pop from S the top element x
+        let L' be an empty set (of strings)
+        for all w in L
+            for i = 1 to |w| + 1 do
+                insert w[1,...,i - 1] + x + w[i,...,|w|] in L'
+        L = L'
+    let A be an empty list (of strings)
+    for all w in L do
+        append w to A
+    sort A
+    return A
+
+PERMUTATIONS(S)
+    L = PERMUTATIONS("", S)
+    let A be an empty list (of strings)
+    for all w in L do
+        append w to A
+    sort A
+    return A
+
+
+PERMUTATIONS(prefix, S)
+	let L be an empty set of strings
+	if |S| = 0 then
+		insert prefix in L
+    else
+        for i = 1 to |S| do
+            for all W in PERMUTATIONS(prefix + S[i], S[1,...,i - 1] + S[i + i],...,|S|] do
+                insert w in L
+    return L

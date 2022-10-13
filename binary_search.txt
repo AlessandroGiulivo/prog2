@@ -1,0 +1,44 @@
+LINEAR-SEARCH(A, v)
+    return LINEAR-SEARCH((A, v, 1, |A|)
+    
+LINEAR-SEARCH(A, v, low, high)
+    for i = low to high do
+        if A[i] = v then
+            return i
+    return nill
+    
+LINEAR-SEARCH(A, v, low, high)
+    if low > high then
+        return nill
+    else
+        if A[low] = v then
+            return low
+        else 
+            return LINEAR-SEARCH(A, i, low + 1, high)
+            
+BINARY-SEARCH(A, v)
+    return BINARY-SEARCH(A, v, 1, |A|)
+
+BINARY-SEARCH(A, v, low, high)
+    while low <= high do
+        mid = (low + high) / 2
+        if A[mid] = v then
+            return mid
+        else if A[mid] is < v then
+            low = mid + 1
+        else
+            high = mid - 1
+            
+            
+BINARY-SEARCH(A, v, low, high)
+    if low > high then
+        return nill
+    else
+        mid = (low + high) / 2
+        
+        if A[mid] = v then
+            return mid
+        else if A[mid] is < v then
+            BINARY-SEARCH(A, v, mid + 1, high)
+        else
+            BINARY-SEARCH(A, v, low, mid - 1)
